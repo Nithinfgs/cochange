@@ -97,7 +97,10 @@ test('report renders self-contained HTML with escaped names', () => {
   // `<` is not a legal file name character on Windows, so use it only elsewhere.
   const tricky = process.platform === 'win32' ? "a&b'c.ts" : 'a<script>&b.ts';
   const r = fresh(makeRepo());
-  for (let i = 0; i < 6; i++) r.commit({ [tricky]: `${i}`, 'b.ts': `${i}` });
+  for (let i = 0; i < 6; i++) {
+    r.commit({ [tricky]: `${i}`, 'b.ts': `${i}` });
+    r.commit({ [`noise${i}.ts`]: 'x' });
+  }
   const html = renderReport(
     r.dir,
     readHistory(r.dir, { maxCommits: 100 }),

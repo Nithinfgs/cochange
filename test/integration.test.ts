@@ -94,8 +94,10 @@ test('backtest recovers the planted coupling and is honest about noise', () => {
 });
 
 test('report renders self-contained HTML with escaped names', () => {
+  // `<` is not a legal file name character on Windows, so use it only elsewhere.
+  const tricky = process.platform === 'win32' ? "a&b'c.ts" : 'a<script>&b.ts';
   const r = fresh(makeRepo());
-  for (let i = 0; i < 6; i++) r.commit({ 'a<script>.ts': `${i}`, 'b.ts': `${i}` });
+  for (let i = 0; i < 6; i++) r.commit({ [tricky]: `${i}`, 'b.ts': `${i}` });
   const html = renderReport(
     r.dir,
     readHistory(r.dir, { maxCommits: 100 }),
@@ -103,7 +105,8 @@ test('report renders self-contained HTML with escaped names', () => {
     DEFAULTS,
   );
   assert.ok(html.includes('<svg id="graph"'));
-  assert.ok(!html.includes('a<script>.ts'));
+  assert.ok(!html.includes('<script>&b'), 'raw markup must not reach the page');
+  assert.ok(html.includes('&#38;b'), 'names are HTML-escaped in tables');
   assert.ok(!/https?:\/\//.test(html.replace(/http:\/\/www\.w3\.org\/2000\/svg/g, '')));
 });
 

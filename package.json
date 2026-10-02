@@ -1,0 +1,56 @@
+{
+  "name": "cochange",
+  "version": "0.1.0",
+  "description": "Mines git history for files that change together, then flags the companion files you forgot to touch. Backtested on your own repo.",
+  "keywords": [
+    "git",
+    "code-review",
+    "change-coupling",
+    "co-change",
+    "cli",
+    "developer-tools",
+    "coding-agents",
+    "pre-commit"
+  ],
+  "license": "MIT",
+  "author": "Nithinfgs",
+  "homepage": "https://github.com/Nithinfgs/cochange#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nithinfgs/cochange.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nithinfgs/cochange/issues"
+  },
+  "type": "module",
+  "bin": {
+    "cochange": "dist/src/cli.js"
+  },
+  "files": [
+    "dist/src",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "npm run build && node --test \"dist/test/*.test.js\"",
+    "demo": "npm run build && node scripts/make-demo.mjs",
+    "prepublishOnly": "npm run lint && npm test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.6.0",
+    "typescript-eslint": "^8.0.0"
+  }
+}

@@ -3,7 +3,7 @@ export const CLAUDE_SNIPPET = `{
     "Stop": [
       {
         "hooks": [
-          { "type": "command", "command": "npx -y cochange check --hook claude-stop" }
+          { "type": "command", "command": "cochange check --hook claude-stop" }
         ]
       }
     ]
@@ -11,8 +11,9 @@ export const CLAUDE_SNIPPET = `{
 }`;
 
 export const PRECOMMIT_SNIPPET = `#!/bin/sh
-# .git/hooks/pre-commit  (chmod +x). Warns only; add --strict to block the commit.
-npx -y cochange check --staged
+# .git/hooks/pre-commit  (chmod +x). Needs: npm install -g github:Nithinfgs/cochange
+# Warns only; add --strict to block the commit.
+cochange check --staged
 exit 0`;
 
 export const GITHUB_SNIPPET = `name: cochange
@@ -24,7 +25,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0 # cochange needs history
-      - run: npx -y cochange check --base origin/\${{ github.base_ref }} --format github`;
+      - run: npm install -g github:Nithinfgs/cochange
+      - run: cochange check --base origin/\${{ github.base_ref }} --format github`;
 
 export function snippet(kind: string): string | undefined {
   switch (kind) {

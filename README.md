@@ -18,9 +18,13 @@ You edit `src/routes/invoices.ts`. In 9 of the last 9 commits that touched it, `
 `cochange` reads your git history, learns which files move together, and tells you which companions are missing from your current change. No config, no network, no API keys, and no language-specific parsing. It works on anything git can diff.
 
 ```sh
-npx cochange            # check your uncommitted changes
-npx cochange backtest   # measure how trustworthy the signal is for THIS repo
+npm install -g github:Nithinfgs/cochange   # one-time install (needs Node 20+ and git)
+
+cochange            # check your uncommitted changes
+cochange backtest   # measure how trustworthy the signal is for THIS repo
 ```
+
+No install? `npx github:Nithinfgs/cochange` runs it once.
 
 ## Why
 
@@ -33,21 +37,23 @@ It matters more with coding agents. An agent edits the file you pointed it at, r
 Requires Node 20+ and git. Run it from inside any git repository:
 
 ```sh
-npx cochange                      # all uncommitted changes (the default)
-npx cochange --staged             # only what is staged
-npx cochange --base origin/main   # everything on this branch, for PRs
-npx cochange of src/api.ts        # what usually changes together with a file
-npx cochange report -o report.html   # shareable coupling map
+npm install -g github:Nithinfgs/cochange   # or prefix commands with: npx github:Nithinfgs/cochange
+
+cochange                      # all uncommitted changes (the default)
+cochange --staged             # only what is staged
+cochange --base origin/main   # everything on this branch, for PRs
+cochange of src/api.ts        # what usually changes together with a file
+cochange report -o report.html   # shareable coupling map
 ```
 
-Or install it: `npm install -g cochange`.
+A release tarball is also attached to each [GitHub release](https://github.com/Nithinfgs/cochange/releases). An npm registry package is planned.
 
 ### Check how much to trust it first
 
 Co-change signals are strong in some repos and noise in others. Rather than guess, replay your own history:
 
 ```sh
-$ npx cochange backtest --sweep      # output shown is from django/django
+$ cochange backtest --sweep      # output shown is from django/django
 cochange backtest · 300 recent commits, 1,153 held-out files, trained on earlier history only
 
   At 80% confidence (your current setting):
@@ -95,9 +101,7 @@ Claude Code (`.claude/settings.json`):
 ```json
 {
   "hooks": {
-    "Stop": [
-      { "hooks": [{ "type": "command", "command": "npx -y cochange check --hook claude-stop" }] }
-    ]
+    "Stop": [{ "hooks": [{ "type": "command", "command": "cochange check --hook claude-stop" }] }]
   }
 }
 ```
@@ -155,6 +159,7 @@ The idea of mining co-changes is old and well studied ("logical coupling"). [cod
 
 ## Roadmap
 
+- [ ] Publish to the npm registry
 - [ ] Group-aware rules ("when A and B both change, C follows")
 - [ ] Path-pattern rules that generalize to brand-new files (`src/<x>.ts` pairs with `tests/<x>.test.ts`)
 - [ ] Cached index for very large monorepos

@@ -1,0 +1,10 @@
+{
+  "minConfidence": 0.8,
+  "minSupport": 4,
+  "minLift": 2,
+  "maxFiles": 25,
+  "halfLifeDays": 365,
+  "maxCommits": 3000,
+  "ignore": ["docs/generated/**"],
+  "ignorePairs": [["src/legacy.ts", "docs/legacy.md"]]
+}

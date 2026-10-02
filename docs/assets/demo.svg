@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="894" height="550" viewBox="0 0 894 550" role="img" aria-label="Terminal session: cochange warns that tests/invoices.test.ts and docs/api/invoices.md were not changed alongside src/routes/invoices.ts, then reports all clear after they are updated">
+<style>text{font:14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre}@keyframes s0{0%,11.11%{opacity:0}11.20%,100%{opacity:1}}.l0{animation:s0 11.70s linear infinite}@keyframes s1{0%,12.48%{opacity:0}12.56%,100%{opacity:1}}.l1{animation:s1 11.70s linear infinite}@keyframes s3{0%,21.03%{opacity:0}21.11%,100%{opacity:1}}.l3{animation:s3 11.70s linear infinite}@keyframes s4{0%,22.39%{opacity:0}22.48%,100%{opacity:1}}.l4{animation:s4 11.70s linear infinite}@keyframes s5{0%,23.76%{opacity:0}23.85%,100%{opacity:1}}.l5{animation:s5 11.70s linear infinite}@keyframes s6{0%,25.13%{opacity:0}25.21%,100%{opacity:1}}.l6{animation:s6 11.70s linear infinite}@keyframes s7{0%,26.50%{opacity:0}26.58%,100%{opacity:1}}.l7{animation:s7 11.70s linear infinite}@keyframes s8{0%,27.86%{opacity:0}27.95%,100%{opacity:1}}.l8{animation:s8 11.70s linear infinite}@keyframes s9{0%,29.23%{opacity:0}29.32%,100%{opacity:1}}.l9{animation:s9 11.70s linear infinite}@keyframes s10{0%,30.60%{opacity:0}30.68%,100%{opacity:1}}.l10{animation:s10 11.70s linear infinite}@keyframes s11{0%,31.97%{opacity:0}32.05%,100%{opacity:1}}.l11{animation:s11 11.70s linear infinite}@keyframes s13{0%,40.51%{opacity:0}40.60%,100%{opacity:1}}.l13{animation:s13 11.70s linear infinite}@keyframes s14{0%,41.88%{opacity:0}41.97%,100%{opacity:1}}.l14{animation:s14 11.70s linear infinite}@keyframes s15{0%,43.25%{opacity:0}43.33%,100%{opacity:1}}.l15{animation:s15 11.70s linear infinite}@keyframes s16{0%,44.62%{opacity:0}44.70%,100%{opacity:1}}.l16{animation:s16 11.70s linear infinite}@keyframes s18{0%,53.16%{opacity:0}53.25%,100%{opacity:1}}.l18{animation:s18 11.70s linear infinite}@keyframes s19{0%,54.53%{opacity:0}54.62%,100%{opacity:1}}.l19{animation:s19 11.70s linear infinite}@keyframes s20{0%,55.90%{opacity:0}55.98%,100%{opacity:1}}.l20{animation:s20 11.70s linear infinite}@keyframes s21{0%,57.26%{opacity:0}57.35%,100%{opacity:1}}.l21{animation:s21 11.70s linear infinite}@media (prefers-reduced-motion:reduce){text{animation:none!important;opacity:1!important}}</style>
+<rect width="894" height="550" rx="10" fill="#0d1117"/>
+<rect width="894" height="36" rx="10" fill="#161b22"/><rect y="26" width="894" height="10" fill="#161b22"/>
+<circle cx="22" cy="18" r="6" fill="#ff5f56"/><circle cx="42" cy="18" r="6" fill="#ffbd2e"/><circle cx="62" cy="18" r="6" fill="#27c93f"/>
+<text x="447" y="23" text-anchor="middle" fill="#8b949e" style="font-size:12px">invoice-api (sample repo)</text>
+<text class="l0" x="24" y="64"><tspan fill="#56d364">$</tspan> <tspan fill="#e6edf3">git status --short</tspan></text>
+<text class="l1" x="24" y="85"><tspan fill="#e6edf3"> M src/routes/invoices.ts</tspan></text>
+
+<text class="l3" x="24" y="127"><tspan fill="#56d364">$</tspan> <tspan fill="#e6edf3">cochange</tspan></text>
+<text class="l4" x="24" y="148"><tspan fill="#e6edf3" font-weight="700">cochange</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#8b949e">·</tspan><tspan fill="#e6edf3"> 1 changed file </tspan><tspan fill="#8b949e">·</tspan><tspan fill="#e6edf3"> learned from 71 commits</tspan></text>
+<text class="l5" x="24" y="169"></text>
+<text class="l6" x="24" y="190"><tspan fill="#e3b341">⚠ 2 files you may have forgotten:</tspan></text>
+<text class="l7" x="24" y="211"></text>
+<text class="l8" x="24" y="232"><tspan fill="#e6edf3">  </tspan><tspan fill="#79c0ff">docs/api/invoices.md  </tspan><tspan fill="#e6edf3">  </tspan><tspan fill="#e6edf3" font-weight="700">100%</tspan><tspan fill="#e6edf3">  9 of 9 commits     </tspan><tspan fill="#8b949e">because you changed src/routes/invoices.ts</tspan></text>
+<text class="l9" x="24" y="253"><tspan fill="#e6edf3">  </tspan><tspan fill="#79c0ff">tests/invoices.test.ts</tspan><tspan fill="#e6edf3">  </tspan><tspan fill="#e6edf3" font-weight="700">100%</tspan><tspan fill="#e6edf3">  9 of 9 commits     </tspan><tspan fill="#8b949e">because you changed src/routes/invoices.ts</tspan></text>
+<text class="l10" x="24" y="274"></text>
+<text class="l11" x="24" y="295"><tspan fill="#8b949e">Wrong call? Add the pair to "ignorePairs" in .cochange.json.</tspan></text>
+
+<text class="l13" x="24" y="337"><tspan fill="#56d364">$</tspan> <tspan fill="#e6edf3">git status --short</tspan></text>
+<text class="l14" x="24" y="358"><tspan fill="#e6edf3"> M docs/api/invoices.md</tspan></text>
+<text class="l15" x="24" y="379"><tspan fill="#e6edf3"> M src/routes/invoices.ts</tspan></text>
+<text class="l16" x="24" y="400"><tspan fill="#e6edf3"> M tests/invoices.test.ts</tspan></text>
+
+<text class="l18" x="24" y="442"><tspan fill="#56d364">$</tspan> <tspan fill="#e6edf3">cochange</tspan></text>
+<text class="l19" x="24" y="463"><tspan fill="#e6edf3" font-weight="700">cochange</tspan><tspan fill="#e6edf3"> </tspan><tspan fill="#8b949e">·</tspan><tspan fill="#e6edf3"> 3 changed files </tspan><tspan fill="#8b949e">·</tspan><tspan fill="#e6edf3"> learned from 71 commits</tspan></text>
+<text class="l20" x="24" y="484"></text>
+<text class="l21" x="24" y="505"><tspan fill="#56d364">✓ No forgotten companions.</tspan></text>
+</svg>
